@@ -4,10 +4,17 @@ body {
 
 p {
     font-family: 'proxima-nova', sans-serif;
+    position: relative;
+    left: 5px;
 }
 
 label {
     font-family: 'proxima-nova', sans-serif;
+}
+
+div {
+    position: relative;
+    left: 5px;
 }
 
 
@@ -77,4 +84,8 @@ ul {
 #heading {
     text-align: center;
     font-family: 'proxima-nova', sans-serif;
+}
+
+#ERR {
+    color:red
 }
