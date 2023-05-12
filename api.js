@@ -27,7 +27,7 @@ const geocodingAPI = "https://api.geoapify.com/v1/geocode/reverse?lat=" + lat +"
 const response = await fetch(geocodingAPI);
 const jsonData = await response.json();
 geoData = jsonData;
-console.log(Data);
+console.log(geoData);
 // Above code partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys & https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch,
 
 // Below code from ChatGPT https://chat.openai.com.
@@ -69,7 +69,7 @@ async function logJSONData(url) {
     const response = await fetch(url);
     const jsonData = await response.json();
     Data = jsonData;
-    console.log(geoData);
+    console.log(Data);
 
     document.getElementById("icon").innerHTML = Data["weather"][0]["id"];
     document.getElementById("location").innerHTML = Data["name"];
