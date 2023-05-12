@@ -14,7 +14,6 @@ label {
 
 div {
     position: relative;
-    left: 5px;
 }
 
 
@@ -86,6 +85,6 @@ ul {
     font-family: 'proxima-nova', sans-serif;
 }
 
-#ERR {
-    color:red
+#weatherData {
+    text-align: center;
 }

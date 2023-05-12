@@ -20,6 +20,10 @@
         <li><a href="credits.html">Credits</a></li>
       </ul>
       <!--- Above code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar--->
+      
+      <div id="geoCity"></div>
+      <div id="lat"></div>
+      <div id="long"></div>
     <h1 id="heading">Hello Weather</h1>
     <div id="text-center">
     <form id="formCity">
@@ -28,8 +32,10 @@
         <input type="text" id="weatherQuery" placeholder="Ex: Amman">
        <br> <button type="submit" id="weatherButton" class="btn btn-primary">Let's Go!</button>
     </form>
+    <hr>
     </div>
-    <div>
+    <div id = "weatherData">
+        <div id = 'icon'></div>
         <div id = 'location'></div>
         <div id = 'place'></div>
         <div id="condition"></div>
