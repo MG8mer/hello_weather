@@ -26,9 +26,15 @@
       <div id="long"></div>
     <h1 id="heading">Hello Weather</h1>
     <div id="text-center">
+     <!--- Below code from ChatGPT *BUT* has been slightly modified--->
+    <form id="formCity">
         <label>Where would you like to visit?</label>
         <br>
-       <br><button onclick="weatherQuery()" id="weatherButton" class="btn btn-primary">Let's Go!</button>
+        <input type="text" id="weatherQuery" placeholder="Ex: Amman">
+       <br><button onclick="interactiveWeatherQurty(event)" id="weatherButton" class="btn btn-primary">Let's Go!</button>
+       <br>
+    </form>
+     <!--- Above code from ChatGPT *BUT* has been slightly modified--->
     <hr>
     </div>
     <div id = "weatherData">
