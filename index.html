@@ -8,7 +8,7 @@
     <!--Credits to https://www.w3schools.com/html/html_favicon.asp for Favicon guide-->
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="stylish.css">
-    <title>Weather.pp</title>
+    <title>Hello Weather!</title>
     <style>
 
     </style>
@@ -18,19 +18,9 @@
     <ul>
         <li><a href="index.html">Weather Hub</a></li>
         <li><a href="credits.html">Credits</a></li>
-        <li><a href="README.md">README!</a></li>
       </ul>
       <!--- Above code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar--->
     
-    <div id="currentLocation">
-      <div id="bottom-border">Your current location:
-        <br> + Coords (Latitude Longitude)
-      </div>
-      <div id="geoCity"></div>
-      <div id="lat"></div>
-      <div id="long"></div>
-    </div>
-
     <h1 id="heading">Hello Weather</h1>
     <div id="text-center">
      <!--- Below code from ChatGPT *BUT* has been slightly modified--->
@@ -43,21 +33,31 @@
     </form>
      <!--- Above code from ChatGPT *BUT* has been slightly modified--->
     <hr>
+    <div id="currentLocation">
+        <div id="bottom-border">Your current location:
+          <br> + Coords (Latitude Longitude)
+        </div>
+        <div id="geoCity"></div>
+        <div id="lat"></div>
+        <div id="long"></div>
+      </div>
+  
     </div>
     <div id = "weatherData">
         <h1><div id = 'location'></div></h1>
-        <div id = 'place'></div>
-        <div id = 'condition-icon'><img src="icons/0dn.png" width="128" height="128"></div>
+        <h2><div id = 'place'></div></h2>
+       <div id = 'condition-icon'><img src="icons/0dn.png" width="128" height="128"></div>
         <div id="condition"></div>
         <div id = 'feelsLike'></div>
         <div id = 'temp'></div>
         <div id = 'output'></div>
         <div id = 'wind'></div>
     </div>
+    <hr>
 
 <div id="creditsAPI">
-    <p id="text-center">Weather data/image icons obtained from <a href="https://openweathermap.org/api">OpenWeatherAPI</a></p>
-    <p id="text-center">Reverse geolocation data obtained from <a href="https://www.geoapify.com/products-and-services">Geoapify</a></p>
+    <p id="text-center"><em>Weather data/image icons obtained from <a href="https://openweathermap.org/api">OpenWeatherAPI</em></a></p>
+    <p id="text-center"><em>Reverse geolocation data obtained from <a href="https://www.geoapify.com/products-and-services">Geoapify</a></em></p>
 </div>
     <script src="api.js">
     </script>

@@ -94,9 +94,9 @@ ul {
 }
 
 #currentLocation {
-  position: absolute;
-  left: 1px;
-  top: 7%;
+  position: relative;
+  left: 40%;
+  top: 1px;
   text-align: center;
   width: 20%;
   border: 2px black solid;
@@ -107,5 +107,21 @@ ul {
 }
 
 #creditsAPI {
-  top: 25%;
+  top: 10px;
+  border-top: 2px solid rgb(137, 137, 223);
+  border-bottom: 2px solid rgb(137, 137, 223);
+}
+
+#weatherButton {
+  position: relative;
+  border-radius: 20px;
+  width: 20%;
+  top: 10px;
+}
+
+#weatherQuery {
+  position: relative;
+  border-radius: 20px;
+  width: 50%;
+  font-size: x-large;
 }
