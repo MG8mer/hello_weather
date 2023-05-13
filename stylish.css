@@ -16,6 +16,10 @@ div {
     position: relative;
 }
 
+hr {
+  position: relative;
+  top: 15px;
+}
 
 /* Below code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar */
 ul {
@@ -87,4 +91,21 @@ ul {
 
 #weatherData {
     text-align: center;
+}
+
+#currentLocation {
+  position: absolute;
+  left: 1px;
+  top: 7%;
+  text-align: center;
+  width: 20%;
+  border: 2px black solid;
+}
+
+#bottom-border {
+  border-bottom: 2px black solid;
+}
+
+#creditsAPI {
+  top: 25%;
 }

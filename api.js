@@ -33,14 +33,6 @@ console.log(geoData);
 // Below code from ChatGPT https://chat.openai.com.
 const geoCity = geoData.features[0].properties.state;
 document.getElementById('geoCity').innerHTML = geoCity;
-
-/* fetch(geocodingAPI)
-  .then(response => response.json())
-  .then(data => {
-    const geoCity = data.features[0].properties.state || 'N/A';
-    document.getElementById('geoCity').innerHTML = geoCity;
-*/
-
     // Displays weather info for current location, can be changed by just enetering a new city in window prompt after clicking button.
     const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey;
     logJSONData(queryURL);
@@ -71,10 +63,15 @@ async function logJSONData(url) {
     Data = jsonData;
     console.log(Data);
 
-    document.getElementById("icon").innerHTML = Data["weather"][0]["id"];
+    // Below implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
+    let dataIcon = Data['weather'][0]['icon'];
+    let weatherIcon = document.getElementById('condition-icon');
+    weatherIcon.innerHTML = `<img src=icons/${dataIcon}.png>`
+    console.log(weatherIcon.innerHTML);
+     //Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
     document.getElementById("location").innerHTML = Data["name"];
    document.getElementById("place").innerHTML = Data["sys"]["country"];
-   document.getElementById("condition").innerHTML = Data["weather"][0]["description"];
+   document.getElementById("condition").innerHTML = Data["weather"][0]["main"];
     document.getElementById("temp").innerHTML = "Temp: " + Math.round(Number(Data['main']['temp']-273.15));
     document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])-273.15); 
     document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s";
