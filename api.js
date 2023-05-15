@@ -34,8 +34,12 @@ console.log(geoData);
 const geoCity = geoData.features[0].properties.state;
 document.getElementById('geoCity').innerHTML = geoCity;
     // Displays weather info for current location, can be changed by just enetering a new city in window prompt after clicking button.
+    const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ geoCity + "&appid=" + APIKey;
+    logMultiJSONData(multiQueryURL)
     const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey;
     logJSONData(queryURL);
+    
+
     // ChatGPT helped me debug why this wasn't working when it was outside the getPositionSuccess function. It was simply outside the scope of the geoCity constant.
     // Above code from ChatGPT https://chat.openai.com.
 }
@@ -77,15 +81,34 @@ async function logJSONData(url) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s";
 }
 
+var multiData;
+async function logMultiJSONData(url) {
+    const response = await fetch(url);
+    const jsonData = await response.json();
+    multiData = jsonData;
+    console.log(multiData);
+
+    var nameEls = document.getElementsByClassName('multiLocation');
+    for (var i = 0; i < nameEls.length; i++) {
+        nameEls[i].innerHTML = multiData['city']['name'];
+    }
+    document.getElementById('multiTemp').innerHTML = "Temp: " + Math.round(Number((multiData['list'][0]['main']['temp'] + multiData['list'][1]['main']['temp'] + multiData['list'][2]['main']['temp'] + multiData['list'][3]['main']['temp'] + multiData['list'][4]['main']['temp'] + multiData['list'][5]['main']['temp'] + multiData['list'][6]['main']['temp'] + multiData['list'][7]['main']['temp'])/8)-273.15);
+
+}
+
+
 // Below code from ChatGPT https://chat.openai.com/ *BUT* has been modified slightly
 function interactiveWeatherQurty(event) {
     event.preventDefault();
     const weatherQuery = document.getElementById
     ("weatherQuery");
     const city = weatherQuery.value.trim();
-    if (city !== "") {
+    const multiCity = weatherQuery.value.trim();
+    if (city !== "" && multiCity !== "") {
     const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-    logJSONData(queryURL)
+    logJSONData(queryURL);
+    const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey;
+    logMultiJSONData(multiQueryURL);
     }
 }
 const formCity = document.getElementById("formCity");
