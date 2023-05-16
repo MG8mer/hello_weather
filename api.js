@@ -38,8 +38,6 @@ document.getElementById('geoCity').innerHTML = geoCity;
     logMultiJSONData(multiQueryURL)
     const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey;
     logJSONData(queryURL);
-    
-
     // ChatGPT helped me debug why this wasn't working when it was outside the getPositionSuccess function. It was simply outside the scope of the geoCity constant.
     // Above code from ChatGPT https://chat.openai.com.
 }
@@ -80,6 +78,7 @@ async function logJSONData(url) {
     document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])-273.15); 
     document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s";
 }
+// Above Code also partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys, https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, and My Dad; what my Dad wrote has been modifified and added to greatly.
 
 var multiData;
 async function logMultiJSONData(url) {
@@ -88,12 +87,26 @@ async function logMultiJSONData(url) {
     multiData = jsonData;
     console.log(multiData);
 
-    var nameEls = document.getElementsByClassName('multiLocation');
-    for (var i = 0; i < nameEls.length; i++) {
-        nameEls[i].innerHTML = multiData['city']['name'];
+    var names = document.getElementsByClassName('multiLocation');
+    for (var a = 0; a < names.length; a++) {
+        names[a].innerHTML = multiData['city']['name'];
     }
-    document.getElementById('multiTemp').innerHTML = "Temp: " + Math.round(Number((multiData['list'][0]['main']['temp'] + multiData['list'][1]['main']['temp'] + multiData['list'][2]['main']['temp'] + multiData['list'][3]['main']['temp'] + multiData['list'][4]['main']['temp'] + multiData['list'][5]['main']['temp'] + multiData['list'][6]['main']['temp'] + multiData['list'][7]['main']['temp'])/8)-273.15);
 
+    var dates = document.getElementsByClassName('date');
+    for (var b = 0; b < dates.length; b++) {
+        dates[b].innerHTML = multiData['list'][b]['dt_txt'];
+    }
+
+    var temps = document.getElementsByClassName('multiTemp');
+    for (var c = 0; c < temps.length; c++) {
+        temps[c].innerHTML = "Temp: " + Math.round(Number(multiData['list'][c]['main']['temp']-273.15));
+    }
+
+    var weatherIcons = document.getElementsByClassName('conIcon');
+    for (d = 0; d < weatherIcons.length; d++) {
+    var multiDataIcon = multiData['list'][d]['weather'][0]['icon'];
+    weatherIcons[d].innerHTML = `<img src=icons/${multiDataIcon}.png>`
+    }
 }
 
 
