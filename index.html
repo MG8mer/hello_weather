@@ -34,16 +34,16 @@
      <!--- Above code from ChatGPT *BUT* has been slightly modified--->
     <hr>
     <div id="currentLocation">
-        <div id="bottom-border">Your current location:
-          <br> + Coords (Latitude Longitude)
+        <div><strong>Your current location:
+          <br> + Coords (Latitude Longitude)</strong>
         </div>
         <div id="geoCity"></div>
         <div id="lat"></div>
         <div id="long"></div>
       </div>
-  
     </div>
     <!--Current Forecast-->
+    <h1 id="heading">Current Forecast:</h1>
     <div id = "weatherData">
         <h1><div id = 'location'></div></h1>
         <h2><div id = 'place'></div></h2>
@@ -54,53 +54,92 @@
         <div id = 'output'></div>
         <div id = 'wind'></div>
     </div>
-
     <!--5 day/3 hour Forecast-->
+<div id="heading">
+  <h1 id="border-top">5Day/3hr Increment Forecast:</h1>
+  <h2 id="border-top">First 24hrs</h2>
+</div>
   <div id="multiForecast">
     <div id = "multiWeatherData">
-      <h2><div class = 'multiLocation'></div></h2>
+      <h6><div class = 'date'></div></h6>
+      <h6><div class = 'multiLocation'></div></h6>
       <h2><div id = ''></div></h2>
-     <div id = ''><img src="" width="" height=""></div>
-      <div id="multiTemp"></div>
+     <div class = 'conIcon'><img src="" width="" height=""></div>
+      <div class="multiTemp"></div>
       <div id = ''></div>
       <div id = ''></div>
       <div id = ''></div>
   </div>
-    <div id="multiWeatherDataII">
-      <h2><div class = 'multiLocation'></div></h2>
-      <h2><div id = ''></div></h2>
-     <div id = ''><img src="" width="" height=""></div>
-      <div id=""></div>
+    <div id="multiWeatherData2">
+      <h6><div class = 'date'></div></h6>
+      <h6><div class = 'multiLocation'></div></h6>
+      <h6><div id = ''></div></h6>
+     <div class = 'conIcon'><img src="" width="" height=""></div>
+      <div class="multiTemp"></div>
       <div id = ''></div>
       <div id = ''></div>
       <div id = ''></div>
   </div>
-      <div id="multiWeatherDataIII">
-        <h2><div class = 'multiLocation'></div></h2>
-        <h2><div id = ''></div></h2>
-       <div id = ''><img src="" width="" height=""></div>
-        <div id=""></div>
+      <div id="multiWeatherData3">
+        <h6><div class = 'date'></div></h6>
+        <h6><div class = 'multiLocation'></div></h6>
+        <h6><div id = ''></div></h6>
+       <div class = 'conIcon'><img src="" width="" height=""></div>
+        <div class="multiTemp"></div>
         <div id = ''></div>
         <div id = ''></div>
         <div id = ''></div>
   </div>
-        <div id="multiWeatherDataIV">
-          <h2><div class = 'multiLocation'></div></h2>
-          <h2><div id = ''></div></h2>
-         <div id = ''><img src="" width="" height=""></div>
-          <div id=""></div>
+        <div id="multiWeatherData4">
+          <h6><div class = 'date'></div></h6>
+          <h6><div class = 'multiLocation'></div></h6>
+          <h6><div id = ''></div></h6>
+         <div class = 'conIcon'><img src="" width="" height=""></div>
+          <div class="multiTemp"></div>
           <div id = ''></div>
           <div id = ''></div>
           <div id = ''></div>
   </div>
-          <div id="multiWeatherDataV">
-            <h2><div class = 'multiLocation'></div></h2>
-            <h2><div id = ''></div></h2>
-           <div id = ''><img src="" width="" height=""></div>
-            <div id=""></div>
+          <div id="multiWeatherData5">
+            <h6><div class = 'date'></div></h6>
+            <h6><div class = 'multiLocation'></div></h6>
+            <h6><div id = ''></div></h6>
+           <div class = 'conIcon'><img src="" width="" height=""></div>
+            <div class="multiTemp"></div>
             <div id = ''></div>
             <div id = ''></div>
             <div id = ''></div>
+          </div>
+            <div id="multiWeatherData6">
+              <h6><div class = 'date'></div></h6>
+            <h6><div class = 'multiLocation'></div></h6>
+            <h6><div id = ''></div></h6>
+           <div class = 'conIcon'><img src="" width="" height=""></div>
+            <div class="multiTemp"></div>
+            <div id = ''></div>
+            <div id = ''></div>
+            <div id = ''></div>
+          </div>
+             <div id="multiWeatherData7">
+              <h6><div class = 'date'></div></h6>
+            <h6><div class = 'multiLocation'></div></h6>
+            <h6><div id = ''></div></h6>
+           <div class = 'conIcon'><img src="" width="" height=""></div>
+            <div class="multiTemp"></div>
+            <div id = ''></div>
+            <div id = ''></div>
+            <div id = ''></div>
+          </div>
+             <div id="multiWeatherData8">
+              <h6><div class = 'date'></div></h6>
+            <h6><div class = 'multiLocation'></div></h6>
+            <h6><div id = ''></div></h6>
+           <div class = 'conIcon'><img src="" width="" height=""></div>
+            <div class="multiTemp"></div>
+            <div id = ''></div>
+            <div id = ''></div>
+            <div id = ''></div>
+            </div>
     </div>
 <div id="creditsAPI">
     <p><em>Weather data/image icons obtained from <a href="https://openweathermap.org/api">OpenWeatherAPI</em></a></p>
