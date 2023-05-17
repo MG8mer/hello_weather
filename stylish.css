@@ -1,5 +1,6 @@
 body {
-    background-color: rgb(152, 236, 244);
+    background-color: rgb(59, 128, 225);
+    background-image: url(images/background.jpg)
    }
 
 p {
@@ -189,6 +190,8 @@ ul {
 
 #creditsAPI {
   top:250px;
+  background-color: #38444d;
+  color:#ffffff;
   position: relative;
   text-align: center;
 }
@@ -213,4 +216,8 @@ ul {
 
 .date {
   font-size: small;
+}
+
+.currentWeather {
+  background-image: '';
 }

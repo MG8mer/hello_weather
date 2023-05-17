@@ -69,13 +69,25 @@ async function logJSONData(url) {
     let dataIcon = Data['weather'][0]['icon'];
     let weatherIcon = document.getElementById('condition-icon');
     weatherIcon.innerHTML = `<img src=icons/${dataIcon}.png>`
-    console.log(weatherIcon.innerHTML);
+    console.log(dataIcon);
+
+    const element = document.querySelector('body')
+    if (dataIcon === '01n' || dataIcon === '02n' ||  dataIcon === '03n' || dataIcon === '04n' || dataIcon === '09n' || dataIcon === '10n' || dataIcon === '11n' || dataIcon === '13n' || dataIcon === '50n') {
+        element.style.backgroundImage = "url('images/background_night.jpg')"
+        element.style.color = 'white'   
+    } else if (dataIcon === '01d' || dataIcon === '02d' ||  dataIcon === '03d' || dataIcon === '04d' || dataIcon === '09d' || dataIcon === '10d' || dataIcon === '11d' || dataIcon === '13d' || dataIcon === '50d') {
+        element.style.backgroundImage = "url('images/background.jpg')"
+        element.style.color = 'black'   
+    }
+
+
+
      //Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
     document.getElementById("location").innerHTML = Data["name"];
    document.getElementById("place").innerHTML = Data["sys"]["country"];
    document.getElementById("condition").innerHTML = Data["weather"][0]["main"];
-    document.getElementById("temp").innerHTML = "Temp: " + Math.round(Number(Data['main']['temp']-273.15));
-    document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])-273.15); 
+    document.getElementById("temp").innerHTML = "Temp: " + Math.round(Number(Data['main']['temp']-273.15)) + '\u00B0';
+    document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])-273.15) + '\u00B0'; 
     document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s";
 }
 // Above Code also partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys, https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, and My Dad; what my Dad wrote has been modifified and added to greatly.
@@ -99,7 +111,7 @@ async function logMultiJSONData(url) {
 
     var temps = document.getElementsByClassName('multiTemp');
     for (var c = 0; c < temps.length; c++) {
-        temps[c].innerHTML = "Temp: " + Math.round(Number(multiData['list'][c]['main']['temp']-273.15));
+        temps[c].innerHTML = Math.round(Number(multiData['list'][c]['main']['temp']-273.15)) + '\u00B0'; // Code for unicode character (\u00B0) for degrees from http://gdichicago.com/courses/gdi-featured-js-intro/homework.html#:~:text=Unicode%20Characters%3A%20To%20print%20the,character%20for%20the%20degress%20symbol.
     }
 
     var weatherIcons = document.getElementsByClassName('conIcon');
