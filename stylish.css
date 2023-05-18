@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(59, 128, 225);
+    background-color: rgb(112, 199, 230);
     background-image: url(images/clear_day.jpg)
    }
 
@@ -22,7 +22,11 @@ hr {
   top: 15px;
 }
 
-/* Below code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar */
+#top {
+  top: 50px;
+}
+
+/* Below code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar & https://www.w3schools.com/css/tryit.asp?filename=trycss_navbar_horizontal_black_fixed */
 ul {
     list-style-type: none;
     margin: 0;
@@ -30,6 +34,9 @@ ul {
     overflow: hidden;
     background-color: #38444d;
     font-family: 'proxima-nova', sans-serif;
+    position: fixed;
+    top: 0;
+    width: 100%;
   }
   
   li {
@@ -175,6 +182,362 @@ ul {
   border-bottom: 2px black solid;
 }
 
+#multiWeatherData9 {
+  top: 220px;
+  width: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  float: left;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData10 {
+  top: 220px;
+  width: 12.5%;
+  left: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData11 {
+  top: 220px;
+  width: 12.5%;
+  left: 25%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData12 {
+  top: 220px;
+  width: 12.5%;
+  left: 37.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData13 {
+  top: 220px;
+  width: 12.5%;
+  left: 50%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData14 {
+  top: 220px;
+  width: 12.5%;
+  left: 62.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData15 {
+  top: 220px;
+  width: 12.5%;
+  left: 75%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData16 {
+  top: 220px;
+  width: 12.5%;
+  left: 87.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData17 {
+  top: 440px;
+  width: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  float: left;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData18 {
+  top: 440px;
+  width: 12.5%;
+  left: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData19 {
+  top: 440px;
+  width: 12.5%;
+  left: 25%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData20 {
+  top: 440px;
+  width: 12.5%;
+  left: 37.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData21 {
+  top: 440px;
+  width: 12.5%;
+  left: 50%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData22 {
+  top: 440px;
+  width: 12.5%;
+  left: 62.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData23 {
+  top: 440px;
+  width: 12.5%;
+  left: 75%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData24 {
+  top: 440px;
+  width: 12.5%;
+  left: 87.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData25 {
+  top: 660px;
+  width: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  float: left;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData26 {
+  top: 660px;
+  width: 12.5%;
+  left: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData27 {
+  top: 660px;
+  width: 12.5%;
+  left: 25%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData28 {
+  top: 660px;
+  width: 12.5%;
+  left: 37.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData29 {
+  top: 660px;
+  width: 12.5%;
+  left: 50%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData30 {
+  top: 660px;
+  width: 12.5%;
+  left: 62.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData31 {
+  top: 660px;
+  width: 12.5%;
+  left: 75%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData32 {
+  top: 660px;
+  width: 12.5%;
+  left: 87.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData33 {
+  top: 880px;
+  width: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  float: left;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData34 {
+  top: 880px;
+  width: 12.5%;
+  left: 12.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData35 {
+  top: 880px;
+  width: 12.5%;
+  left: 25%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData36 {
+  top: 880px;
+  width: 12.5%;
+  left: 37.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData37 {
+  top: 880px;
+  width: 12.5%;
+  left: 50%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData38 {
+  top: 880px;
+  width: 12.5%;
+  left: 62.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData39 {
+  top: 880px;
+  width: 12.5%;
+  left: 75%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+#multiWeatherData40 {
+  top: 880px;
+  width: 12.5%;
+  left: 87.5%;
+  border-right: 2px black solid;
+  border-top: 2px solid black;
+  position: absolute;
+  text-align: center;
+  border-bottom: 2px black solid;
+}
+
+
+
+
+
 
 #currentLocation {
   position: relative;
@@ -189,7 +552,7 @@ ul {
 }
 
 #creditsAPI {
-  top:250px;
+  top:1200px;
   background-color: #38444d;
   color:#ffffff;
   position: relative;

@@ -74,21 +74,27 @@ async function logJSONData(url) {
     const element = document.querySelector('body')
     if (dataIcon === '01n' || dataIcon === '04n' || dataIcon === '09n' || dataIcon === '10n' || dataIcon === '11n' || dataIcon === '13n' || dataIcon === '50n') {
         element.style.backgroundImage = "url('images/clear_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)";
         element.style.color = 'white'   
     } else if (dataIcon === '01d' ||  dataIcon === '03d' || dataIcon === '04d' || dataIcon === '09d' || dataIcon === '10d' || dataIcon === '11d' || dataIcon === '13d' || dataIcon === '50d') {
         element.style.backgroundImage = "url('images/clear_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
         element.style.color = 'black'   
     } else if (dataIcon === '02d') {
         element.style.backgroundImage = "url('images/few_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
         element.style.color = 'black'
     } else if (dataIcon === '02n') {
         element.style.backgroundImage = "url('images/few_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)";
         element.style.color = 'white'
     } else if (dataIcon === '03d') {
         element.style.backgroundImage = "url('images/scattered_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
         element.style.color = 'black'   
     } else if (dataIcon === '03n') {
         element.style.backgroundImage = "url('images/scattered_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)";
         element.style.color = 'white'   
     }
 
