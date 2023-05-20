@@ -22,6 +22,10 @@ hr {
   top: 15px;
 }
 
+a {
+  color: blue
+}
+
 #top {
   top: 50px;
 }

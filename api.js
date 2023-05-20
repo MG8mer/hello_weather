@@ -72,11 +72,11 @@ async function logJSONData(url) {
     console.log(dataIcon);
 
     const element = document.querySelector('body')
-    if (dataIcon === '01n' || dataIcon === '04n' || dataIcon === '09n' || dataIcon === '10n' || dataIcon === '11n' || dataIcon === '13n' || dataIcon === '50n') {
+    if (dataIcon === '01n'|| dataIcon === '50n') {
         element.style.backgroundImage = "url('images/clear_night.jpg')"
         element.style.backgroundColor = "rgb(24, 33, 130)";
         element.style.color = 'white'   
-    } else if (dataIcon === '01d' ||  dataIcon === '03d' || dataIcon === '04d' || dataIcon === '09d' || dataIcon === '10d' || dataIcon === '11d' || dataIcon === '13d' || dataIcon === '50d') {
+    } else if (dataIcon === '01d' || dataIcon === '50d') {
         element.style.backgroundImage = "url('images/clear_day.jpg')"
         element.style.backgroundColor = "rgb(112, 199, 230)"
         element.style.color = 'black'   
@@ -86,7 +86,7 @@ async function logJSONData(url) {
         element.style.color = 'black'
     } else if (dataIcon === '02n') {
         element.style.backgroundImage = "url('images/few_night.jpg')"
-        element.style.backgroundColor = "rgb(24, 33, 130)";
+        element.style.backgroundColor = "rgb(24, 33, 130)"
         element.style.color = 'white'
     } else if (dataIcon === '03d') {
         element.style.backgroundImage = "url('images/scattered_day.jpg')"
@@ -94,9 +94,51 @@ async function logJSONData(url) {
         element.style.color = 'black'   
     } else if (dataIcon === '03n') {
         element.style.backgroundImage = "url('images/scattered_night.jpg')"
-        element.style.backgroundColor = "rgb(24, 33, 130)";
+        element.style.backgroundColor = "rgb(24, 33, 130)"
         element.style.color = 'white'   
-    }
+    } else if (dataIcon === '04d') {
+        element.style.backgroundImage = "url('images/broken_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
+        element.style.color = 'black'   
+    } else if (dataIcon === '04n') {
+        element.style.backgroundImage = "url('images/broken_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)"
+        element.style.color = 'white'   
+    } else if (dataIcon === '09d' || dataIcon === '10d') {
+        element.style.backgroundImage = "url('images/rain_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
+        element.style.color = 'black' 
+    } else if (dataIcon === '09n' || dataIcon === '10n') {
+        element.style.backgroundImage = "url('images/rain_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)"
+        element.style.color = 'white'   
+    } else if (dataIcon === '11d') {
+        element.style.backgroundImage = "url('images/thunder_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
+        element.style.color = 'black'   
+    } else if (dataIcon === '11n') {
+        element.style.backgroundImage = "url('images/thunder_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)"
+        element.style.color = 'white'   
+    } else if (dataIcon === '13d') {
+        element.style.backgroundImage = "url('images/snowy_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
+        element.style.color = 'black'   
+    } else if (dataIcon === '13n') {
+        element.style.backgroundImage = "url('images/snowy_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)"
+        element.style.color = 'black'   
+    } else if (dataIcon === '50d') {
+        element.style.backgroundImage = "url('images/misty_day.jpg')"
+        element.style.backgroundColor = "rgb(112, 199, 230)"
+        element.style.color = 'black'   
+    } else if (dataIcon === '50n') {
+        element.style.backgroundImage = "url('images/misty_night.jpg')"
+        element.style.backgroundColor = "rgb(24, 33, 130)"
+        element.style.color = 'black'   
+    } 
+
+    console.log(element.style.backgroundImage)
 
 
      //Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
