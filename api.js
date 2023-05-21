@@ -8,7 +8,7 @@ Below code partially from
 */
 
 
-const APIKey = "ed0e35b9304aa2a810b22c9bc7a56b60"
+var APIKey = "ed0e35b9304aa2a810b22c9bc7a56b60"
 // Below code inspired by: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API & https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
 var watchID;
 var geoData;
@@ -72,11 +72,11 @@ async function logJSONData(url) {
     console.log(dataIcon);
 
     const element = document.querySelector('body')
-    if (dataIcon === '01n'|| dataIcon === '50n') {
+    if (dataIcon === '01n') {
         element.style.backgroundImage = "url('images/clear_night.jpg')"
         element.style.backgroundColor = "rgb(24, 33, 130)";
         element.style.color = 'white'   
-    } else if (dataIcon === '01d' || dataIcon === '50d') {
+    } else if (dataIcon === '01d') {
         element.style.backgroundImage = "url('images/clear_day.jpg')"
         element.style.backgroundColor = "rgb(112, 199, 230)"
         element.style.color = 'black'   
@@ -129,7 +129,7 @@ async function logJSONData(url) {
         element.style.backgroundColor = "rgb(24, 33, 130)"
         element.style.color = 'black'   
     } else if (dataIcon === '50d') {
-        element.style.backgroundImage = "url('images/misty_day.jpg')"
+        element.style.backgroundImage = "url('images/misty_day.png')"
         element.style.backgroundColor = "rgb(112, 199, 230)"
         element.style.color = 'black'   
     } else if (dataIcon === '50n') {
@@ -142,8 +142,7 @@ async function logJSONData(url) {
 
 
      //Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
-    document.getElementById("location").innerHTML = Data["name"];
-   document.getElementById("place").innerHTML = Data["sys"]["country"];
+    document.getElementById("location").innerHTML = Data["name"] + ", " + Data["sys"]["country"];
    document.getElementById("condition").innerHTML = Data["weather"][0]["main"];
     document.getElementById("temp").innerHTML = "Temp: " + Math.round(Number(Data['main']['temp']-273.15)) + '\u00B0';
     document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])-273.15) + '\u00B0'; 
@@ -178,25 +177,32 @@ async function logMultiJSONData(url) {
     var multiDataIcon = multiData['list'][d]['weather'][0]['icon'];
     weatherIcons[d].innerHTML = `<img src=icons/${multiDataIcon}.png>`
     }
+
+    var countries = document.getElementsByClassName('multiCountry');
+    for (e = 0; e < countries.length; e++) {
+       countries[e].innerHTML = multiData['city']['country']
+    }
 }
 
 
 // Below code from ChatGPT https://chat.openai.com/ *BUT* has been modified slightly
-function interactiveWeatherQurty(event) {
+function interactiveWeatherQuery(event) {
     event.preventDefault();
     const weatherQuery = document.getElementById
     ("weatherQuery");
-    const city = weatherQuery.value.trim();
-    const multiCity = weatherQuery.value.trim();
+    var city = weatherQuery.value.trim();
+    var multiCity = weatherQuery.value.trim();
     if (city !== "" && multiCity !== "") {
-    const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
-    logJSONData(queryURL);
-    const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey;
-    logMultiJSONData(multiQueryURL);
+        const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+        logJSONData(queryURL);
+        const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey;
+        logMultiJSONData(multiQueryURL);
     }
 }
 const formCity = document.getElementById("formCity");
-formCity.addEventListener("submit", interactiveWeatherQurty);
+formCity.addEventListener("submit", interactiveWeatherQuery);
+
+
 // Above code from ChatGPT https://chat.openai.com/ *BUT* has been modified slightly
 
 /*

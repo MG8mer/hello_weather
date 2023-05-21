@@ -26,6 +26,61 @@ a {
   color: blue
 }
 
+table {
+  position: relative;
+  width: 70%;
+  left: 15%;
+  text-align: center;
+}
+
+table, td {
+  border: 2px solid black;
+}
+
+#location {
+  font-size: xx-large;
+  font-weight: 50;
+  position: relative;
+  width: 50%;
+  left: 25%;
+}
+
+#wind {
+  font-size: xx-large;
+  font-weight: 50;
+  position: relative;
+  width: 50%;
+  left: 25%;
+}
+
+.heading {
+  font-size: xx-large;
+  font-weight: 50;
+  position: relative;
+  width: 50%;
+  left: 25%;
+}
+
+
+#condition-icon {
+  position: relative;
+  left: 25%;
+}
+
+#condition {
+  position: relative;
+  font-size: x-large;
+  left: 25%;
+}
+
+#feelsLike {
+  font-size: xx-large
+}
+
+#temp {
+  font-size: xx-large
+}
+
 #top {
   top: 50px;
 }
@@ -103,6 +158,10 @@ ul {
 
 #weatherData {
     text-align: center;
+}
+
+#multiForecast {
+  top: 5px;
 }
 
 #multiWeatherData {
@@ -538,11 +597,6 @@ ul {
   border-bottom: 2px black solid;
 }
 
-
-
-
-
-
 #currentLocation {
   position: relative;
   left: 40%;
@@ -579,6 +633,11 @@ ul {
 
 #border-top {
   border-top: 2px black solid;
+}
+
+#border-bottom {
+  width: 100%;
+  border-bottom: 2px black solid;
 }
 
 .date {
