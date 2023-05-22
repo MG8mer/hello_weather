@@ -45,32 +45,38 @@
         <div id="long"></div>
       </div>
 <!--Current Forecast-->
-<table>
-  <tr id="border-bottom">
-    <th id="heading" class="heading">Current Forecast:</th>
-  </tr>
-  <tr>
-    <th id ='location'></th>
-  </tr>
-  <tr>
-    <th id="condition"></th>
-  </tr>
-  <tr>
-    <th id = 'condition-icon'><img src="icons/0dn.png" width="128" height="128"></th>
-  </tr>
-  <tr>
-    <td id="feelsLike"></td>
-    <td id="temp"></td>
-  </tr>
-  <tr>
-    <th id="wind"></th>
-  </tr>
-</table>
+<div id="forecast">
+  <table>
+    <tr id="border-bottom">
+      <th id="heading" class="heading">Current Forecast:</th>
+    </tr>
+    <tr>
+      <th id ='location'></th>
+    </tr>
+    <tr>
+      <th id="condition"></th>
+    </tr>
+    <tr>
+      <th id = 'condition-icon'><img src="icons/0dn.png" width="128" height="128"></th>
+    </tr>
+    <tr>
+      <td id="temp"></td>
+      <td id="feelsLike"></td>
+    </tr>
+    <th>
+      <th id="wind"></th>
+    </tr>
+    <tr>
+      <td id="humidity"></td>
+      <td id="pressure"></td>
+    </tr>
+  </table>
+</div>
     <!--5 day/3 hour Forecast-->
+<div id="multiForecast">
 <div id="heading">
   <h1 id="border-top">5Day/3hr Increment Forecast:</h1>
 </div>
-  <div id="multiForecast">
     <div id = "multiWeatherData">
       <h6><div class = 'date'></div></h6>
       <h6><div class = 'multiLocation'></div></h6>

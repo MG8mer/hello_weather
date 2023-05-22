@@ -34,7 +34,7 @@ table {
 }
 
 table, td {
-  border: 2px solid black;
+  border: 1px solid #000000;
 }
 
 #location {
@@ -50,7 +50,7 @@ table, td {
   font-weight: 50;
   position: relative;
   width: 50%;
-  left: 25%;
+  right: 25%;
 }
 
 .heading {
@@ -71,6 +71,14 @@ table, td {
   position: relative;
   font-size: x-large;
   left: 25%;
+}
+
+#humidity {
+  font-size: xx-large;
+}
+
+#pressure {
+  font-size: xx-large;
 }
 
 #feelsLike {
@@ -161,7 +169,11 @@ ul {
 }
 
 #multiForecast {
-  top: 5px;
+  top: 20px;
+}
+
+#forecast {
+  top: 10px;
 }
 
 #multiWeatherData {
@@ -246,7 +258,7 @@ ul {
 }
 
 #multiWeatherData9 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   border-right: 2px black solid;
   border-top: 2px solid black;
@@ -257,7 +269,7 @@ ul {
 }
 
 #multiWeatherData10 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 12.5%;
   border-right: 2px black solid;
@@ -268,7 +280,7 @@ ul {
 }
 
 #multiWeatherData11 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 25%;
   border-right: 2px black solid;
@@ -279,7 +291,7 @@ ul {
 }
 
 #multiWeatherData12 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 37.5%;
   border-right: 2px black solid;
@@ -290,7 +302,7 @@ ul {
 }
 
 #multiWeatherData13 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 50%;
   border-right: 2px black solid;
@@ -301,7 +313,7 @@ ul {
 }
 
 #multiWeatherData14 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 62.5%;
   border-right: 2px black solid;
@@ -312,7 +324,7 @@ ul {
 }
 
 #multiWeatherData15 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 75%;
   border-right: 2px black solid;
@@ -323,7 +335,7 @@ ul {
 }
 
 #multiWeatherData16 {
-  top: 220px;
+  top: 340px;
   width: 12.5%;
   left: 87.5%;
   border-right: 2px black solid;
@@ -334,7 +346,7 @@ ul {
 }
 
 #multiWeatherData17 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   border-right: 2px black solid;
   border-top: 2px solid black;
@@ -345,7 +357,7 @@ ul {
 }
 
 #multiWeatherData18 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 12.5%;
   border-right: 2px black solid;
@@ -356,7 +368,7 @@ ul {
 }
 
 #multiWeatherData19 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 25%;
   border-right: 2px black solid;
@@ -367,7 +379,7 @@ ul {
 }
 
 #multiWeatherData20 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 37.5%;
   border-right: 2px black solid;
@@ -378,7 +390,7 @@ ul {
 }
 
 #multiWeatherData21 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 50%;
   border-right: 2px black solid;
@@ -389,7 +401,7 @@ ul {
 }
 
 #multiWeatherData22 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 62.5%;
   border-right: 2px black solid;
@@ -400,7 +412,7 @@ ul {
 }
 
 #multiWeatherData23 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 75%;
   border-right: 2px black solid;
@@ -411,7 +423,7 @@ ul {
 }
 
 #multiWeatherData24 {
-  top: 440px;
+  top: 615px;
   width: 12.5%;
   left: 87.5%;
   border-right: 2px black solid;
@@ -422,7 +434,7 @@ ul {
 }
 
 #multiWeatherData25 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   border-right: 2px black solid;
   border-top: 2px solid black;
@@ -433,7 +445,7 @@ ul {
 }
 
 #multiWeatherData26 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 12.5%;
   border-right: 2px black solid;
@@ -444,7 +456,7 @@ ul {
 }
 
 #multiWeatherData27 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 25%;
   border-right: 2px black solid;
@@ -455,7 +467,7 @@ ul {
 }
 
 #multiWeatherData28 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 37.5%;
   border-right: 2px black solid;
@@ -466,7 +478,7 @@ ul {
 }
 
 #multiWeatherData29 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 50%;
   border-right: 2px black solid;
@@ -477,7 +489,7 @@ ul {
 }
 
 #multiWeatherData30 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 62.5%;
   border-right: 2px black solid;
@@ -488,7 +500,7 @@ ul {
 }
 
 #multiWeatherData31 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 75%;
   border-right: 2px black solid;
@@ -499,7 +511,7 @@ ul {
 }
 
 #multiWeatherData32 {
-  top: 660px;
+  top: 880px;
   width: 12.5%;
   left: 87.5%;
   border-right: 2px black solid;
@@ -510,7 +522,7 @@ ul {
 }
 
 #multiWeatherData33 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   border-right: 2px black solid;
   border-top: 2px solid black;
@@ -521,7 +533,7 @@ ul {
 }
 
 #multiWeatherData34 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 12.5%;
   border-right: 2px black solid;
@@ -532,7 +544,7 @@ ul {
 }
 
 #multiWeatherData35 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 25%;
   border-right: 2px black solid;
@@ -543,7 +555,7 @@ ul {
 }
 
 #multiWeatherData36 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 37.5%;
   border-right: 2px black solid;
@@ -554,7 +566,7 @@ ul {
 }
 
 #multiWeatherData37 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 50%;
   border-right: 2px black solid;
@@ -565,7 +577,7 @@ ul {
 }
 
 #multiWeatherData38 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 62.5%;
   border-right: 2px black solid;
@@ -576,7 +588,7 @@ ul {
 }
 
 #multiWeatherData39 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 75%;
   border-right: 2px black solid;
@@ -587,7 +599,7 @@ ul {
 }
 
 #multiWeatherData40 {
-  top: 880px;
+  top: 1150px;
   width: 12.5%;
   left: 87.5%;
   border-right: 2px black solid;
@@ -610,7 +622,7 @@ ul {
 }
 
 #creditsAPI {
-  top:1200px;
+  top:1390px;
   background-color: #38444d;
   color:#ffffff;
   position: relative;
@@ -637,7 +649,7 @@ ul {
 
 #border-bottom {
   width: 100%;
-  border-bottom: 2px black solid;
+  border-bottom: 1px black solid;
 }
 
 .date {

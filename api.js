@@ -34,9 +34,9 @@ console.log(geoData);
 const geoCity = geoData.features[0].properties.state;
 document.getElementById('geoCity').innerHTML = geoCity;
     // Displays weather info for current location, can be changed by just enetering a new city in window prompt after clicking button.
-    const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ geoCity + "&appid=" + APIKey;
+    const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ geoCity + "&appid=" + APIKey + "&units=metric";
     logMultiJSONData(multiQueryURL)
-    const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey;
+    const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey + "&units=metric";
     logJSONData(queryURL);
     // ChatGPT helped me debug why this wasn't working when it was outside the getPositionSuccess function. It was simply outside the scope of the geoCity constant.
     // Above code from ChatGPT https://chat.openai.com.
@@ -144,9 +144,11 @@ async function logJSONData(url) {
      //Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
     document.getElementById("location").innerHTML = Data["name"] + ", " + Data["sys"]["country"];
    document.getElementById("condition").innerHTML = Data["weather"][0]["main"];
-    document.getElementById("temp").innerHTML = "Temp: " + Math.round(Number(Data['main']['temp']-273.15)) + '\u00B0';
-    document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])-273.15) + '\u00B0'; 
+    document.getElementById("temp").innerHTML = Math.round(Number(Data['main']['temp'])) + '\u00B0';
+    document.getElementById("feelsLike").innerHTML = "Feels Like: " + Math.round(Number(Data['main']['feels_like'])) + '\u00B0'; 
     document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s";
+    document.getElementById('humidity').innerHTML = "Humidity: " + Number(Data["main"]["humidity"]) + "%";
+    document.getElementById('pressure').innerHTML = "Pressure: " + Data['main']['pressure'] + " Pa"
 }
 // Above Code also partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys, https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, and My Dad; what my Dad wrote has been modifified and added to greatly.
 
@@ -169,7 +171,7 @@ async function logMultiJSONData(url) {
 
     var temps = document.getElementsByClassName('multiTemp');
     for (var c = 0; c < temps.length; c++) {
-        temps[c].innerHTML = Math.round(Number(multiData['list'][c]['main']['temp']-273.15)) + '\u00B0'; // Code for unicode character (\u00B0) for degrees from http://gdichicago.com/courses/gdi-featured-js-intro/homework.html#:~:text=Unicode%20Characters%3A%20To%20print%20the,character%20for%20the%20degress%20symbol.
+        temps[c].innerHTML = Math.round(Number(multiData['list'][c]['main']['temp'])) + '\u00B0'; // Code for unicode character (\u00B0) for degrees from http://gdichicago.com/courses/gdi-featured-js-intro/homework.html#:~:text=Unicode%20Characters%3A%20To%20print%20the,character%20for%20the%20degress%20symbol.
     }
 
     var weatherIcons = document.getElementsByClassName('conIcon');
@@ -193,9 +195,9 @@ function interactiveWeatherQuery(event) {
     var city = weatherQuery.value.trim();
     var multiCity = weatherQuery.value.trim();
     if (city !== "" && multiCity !== "") {
-        const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
+        const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=metric";
         logJSONData(queryURL);
-        const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey;
+        const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey + "&units=metric";
         logMultiJSONData(multiQueryURL);
     }
 }
