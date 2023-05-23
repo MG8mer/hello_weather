@@ -29,6 +29,7 @@
         <label>Where would you like to visit?</label>
         <br>
         <input type="text" id="weatherQuery" placeholder="Ex: Amman">
+        <br><div id="htmlErr"></div>
        <br><button onclick="interactiveWeatherQuery(event)" id="weatherButton" class="btn btn-primary">Let's Go!</button>
        <br>
     </form>
@@ -69,6 +70,14 @@
     <tr>
       <td id="humidity"></td>
       <td id="pressure"></td>
+    </tr>
+    <tr>
+      <td id="sunriseTxt"></td>
+      <td id="sunsetTxt"></td>
+    </tr>
+    <tr>
+      <td id="sunrise"></td>
+      <td id="sunset"></td>
     </tr>
   </table>
 </div>

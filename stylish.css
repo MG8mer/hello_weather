@@ -89,6 +89,28 @@ table, td {
   font-size: xx-large
 }
 
+#sunrise {
+  font-size: xx-large;
+}
+
+#sunset {
+  font-size: xx-large;
+}
+
+#sunriseTxt {
+  font-weight: bold;
+  font-size: x-large
+}
+
+#sunsetTxt {
+  font-weight: bold;
+  font-size: x-large
+}
+
+#htmlErr {
+  color: red;
+}
+
 #top {
   top: 50px;
 }

@@ -13,6 +13,7 @@ var APIKey = "ed0e35b9304aa2a810b22c9bc7a56b60"
 var watchID;
 var geoData;
 async function getPositionSuccess(position) {
+try {
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
     navigator.geolocation.clearWatch(watchID)
@@ -30,16 +31,20 @@ geoData = jsonData;
 console.log(geoData);
 // Above code partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys & https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch,
 
-// Below code from ChatGPT https://chat.openai.com.
-const geoCity = geoData.features[0].properties.state;
+// Below code partially from ChatGPT https://chat.openai.com.
+const geoCity = geoData.features[0].properties.state || 'N/A';
 document.getElementById('geoCity').innerHTML = geoCity;
-    // Displays weather info for current location, can be changed by just enetering a new city in window prompt after clicking button.
+    // Displays weather info for current location, can be changed by just enetering a new city in window prompt after clicking button
     const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ geoCity + "&appid=" + APIKey + "&units=metric";
     logMultiJSONData(multiQueryURL)
     const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey + "&units=metric";
     logJSONData(queryURL);
+}
     // ChatGPT helped me debug why this wasn't working when it was outside the getPositionSuccess function. It was simply outside the scope of the geoCity constant.
-    // Above code from ChatGPT https://chat.openai.com.
+        catch (err) {
+            document.getElementById('htmlErr').innerHTML = "Error occured during reverse geocoding, please try again."
+        }   
+    // Above code partially from ChatGPT https://chat.openai.com.
 }
 
 // Below code inspired by: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API & https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
@@ -60,16 +65,18 @@ var watchID = navigator.geolocation.watchPosition(getPositionSuccess, getPositio
 // Below Code also partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys, https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, and My Dad; what my Dad wrote has been modifified and added to greatly.
 var Data;
 async function logJSONData(url) {
+try {
     const response = await fetch(url);
     const jsonData = await response.json();
     Data = jsonData;
     console.log(Data);
-
-    // Below implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
+   // Below implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
     let dataIcon = Data['weather'][0]['icon'];
+
     let weatherIcon = document.getElementById('condition-icon');
     weatherIcon.innerHTML = `<img src=icons/${dataIcon}.png>`
     console.log(dataIcon);
+    // Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
 
     const element = document.querySelector('body')
     if (dataIcon === '01n') {
@@ -140,8 +147,6 @@ async function logJSONData(url) {
 
     console.log(element.style.backgroundImage)
 
-
-     //Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
     document.getElementById("location").innerHTML = Data["name"] + ", " + Data["sys"]["country"];
    document.getElementById("condition").innerHTML = Data["weather"][0]["main"];
     document.getElementById("temp").innerHTML = Math.round(Number(Data['main']['temp'])) + '\u00B0';
@@ -149,21 +154,37 @@ async function logJSONData(url) {
     document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s";
     document.getElementById('humidity').innerHTML = "Humidity: " + Number(Data["main"]["humidity"]) + "%";
     document.getElementById('pressure').innerHTML = "Pressure: " + Data['main']['pressure'] + " Pa"
+
+    document.getElementById('sunriseTxt').innerHTML = "Sunrise";
+    document.getElementById('sunsetTxt').innerHTML = "Sunset";
+    // Below code inspired by: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=convert-unix-timestamp-to-javascript-time'
+    var unixSunrise = Data['sys']['sunrise'];
+    var unixSunset = Data['sys']['sunset'];
+
+    var standardDay = new Date(unixSunrise * 1000);
+    var standardNight = new Date(unixSunset * 1000);
+
+    document.getElementById('sunrise').innerHTML = standardDay.toLocaleTimeString('default') + '<img src=icons/01d.png>';
+    document.getElementById('sunset').innerHTML = standardNight.toLocaleTimeString('default') + '<img src=icons/01n.png>';
+    // Above code inspir by: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=convert-unix-timestamp-to-javascript-time
+}
+catch (err) {
+    document.getElementById('htmlErr').innerHTML = "Not a defined city, try again."
+}
 }
 // Above Code also partially from https://coding-boot-cap.github.io/full-stack/apis/how-to-use-api-keys, https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch, and My Dad; what my Dad wrote has been modifified and added to greatly.
 
 var multiData;
 async function logMultiJSONData(url) {
+try {
     const response = await fetch(url);
     const jsonData = await response.json();
     multiData = jsonData;
     console.log(multiData);
-
     var names = document.getElementsByClassName('multiLocation');
     for (var a = 0; a < names.length; a++) {
         names[a].innerHTML = multiData['city']['name'];
     }
-
     var dates = document.getElementsByClassName('date');
     for (var b = 0; b < dates.length; b++) {
         dates[b].innerHTML = multiData['list'][b]['dt_txt'];
@@ -185,6 +206,13 @@ async function logMultiJSONData(url) {
        countries[e].innerHTML = multiData['city']['country']
     }
 }
+catch (err) {
+    document.getElementById('htmlErr').innerHTML = "Not a defined city, try again."
+}
+}
+
+
+     
 
 
 // Below code from ChatGPT https://chat.openai.com/ *BUT* has been modified slightly
