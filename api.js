@@ -40,6 +40,7 @@ document.getElementById('geoCity').innerHTML = geoCity;
     const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + geoCity + "&appid=" + APIKey + "&units=metric";
     logJSONData(queryURL);
 }
+    
     // ChatGPT helped me debug why this wasn't working when it was outside the getPositionSuccess function. It was simply outside the scope of the geoCity constant.
         catch (err) {
             document.getElementById('htmlErr').innerHTML = "Error occured during reverse geocoding, please try again."
@@ -47,9 +48,10 @@ document.getElementById('geoCity').innerHTML = geoCity;
     // Above code partially from ChatGPT https://chat.openai.com.
 }
 
-// Below code inspired by: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API & https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
+// Below code inspired by: https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API, https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_document_queryselector_class & https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/clearWatch
 function getPositionDenied() {
-    alert("Access to location denied by user.");
+    document.getElementById('geoCity').innerHTML = "Current Location not avaliable at this time."
+    document.querySelector('.locErr').style.color = "red";
     document.getElementById('lat').innerHTML = "N/A";
     document.getElementById('long').innerHTML = "N/A";
   }
@@ -146,7 +148,7 @@ try {
     } 
 
     console.log(element.style.backgroundImage)
-
+    document.getElementById('htmlErr').innerHTML = "";
     document.getElementById("location").innerHTML = Data["name"] + ", " + Data["sys"]["country"];
    document.getElementById("condition").innerHTML = Data["weather"][0]["main"];
     document.getElementById("temp").innerHTML = Math.round(Number(Data['main']['temp'])) + '\u00B0';
@@ -196,14 +198,19 @@ try {
     }
 
     var weatherIcons = document.getElementsByClassName('conIcon');
-    for (d = 0; d < weatherIcons.length; d++) {
-    var multiDataIcon = multiData['list'][d]['weather'][0]['icon'];
-    weatherIcons[d].innerHTML = `<img src=icons/${multiDataIcon}.png>`
+    for (var d = 0; d < weatherIcons.length; d++) {
+        var multiDataIcon = multiData['list'][d]['weather'][0]['icon'];
+        weatherIcons[d].innerHTML = `<img src=icons/${multiDataIcon}.png>`
     }
 
     var countries = document.getElementsByClassName('multiCountry');
-    for (e = 0; e < countries.length; e++) {
+    for (var e = 0; e < countries.length; e++) {
        countries[e].innerHTML = multiData['city']['country']
+    }
+
+    var descriptions = document.getElementsByClassName('multiDesc');
+    for (var f = 0; f < descriptions.length; f++) {
+        descriptions[f].innerHTML = multiData['list'][f]['weather'][0]['main']
     }
 }
 catch (err) {
@@ -212,16 +219,13 @@ catch (err) {
 }
 
 
-     
-
-
 // Below code from ChatGPT https://chat.openai.com/ *BUT* has been modified slightly
 function interactiveWeatherQuery(event) {
     event.preventDefault();
     const weatherQuery = document.getElementById
     ("weatherQuery");
-    var city = weatherQuery.value.trim();
-    var multiCity = weatherQuery.value.trim();
+    const city = weatherQuery.value.trim();
+    const multiCity = weatherQuery.value.trim();
     if (city !== "" && multiCity !== "") {
         const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=metric";
         logJSONData(queryURL);
