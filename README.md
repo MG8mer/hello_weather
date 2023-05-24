@@ -7,6 +7,7 @@ Okay now that the ~*filthy CASUALS*~ are gone, we can get to the juicy piece of 
 Here's some of the JavaScript in my code:
 
 ![Try this](code_explained/code_err.png)
+![Err](code_explained/code_try.png)
 
 Here it is in a code-block:
 
