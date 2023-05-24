@@ -143,7 +143,7 @@ ul {
   }
   
   li a:hover, .dropdown:hover .dropbtn {
-    background-color:rgb(165, 177, 29);
+    background-color:rgb(29, 138, 177);
     font-family: 'proxima-nova', sans-serif;
   }
   
