@@ -189,7 +189,6 @@ Below code partially from
         document.getElementById("wind").innerHTML = "Wind Speed: " + Number(Data["wind"]["speed"]) + "m/s"; // Wind Speed
         document.getElementById('humidity').innerHTML = "Humidity: " + Number(Data["main"]["humidity"]) + "%"; // Humidity %
         document.getElementById('pressure').innerHTML = "Pressure: " + Data['main']['pressure'] + " Pa" // Pressure
-        document.getEleme// Visibility (km)
 
         document.getElementById('sunriseTxt').innerHTML = "Sunrise"; // Sunrise text field
         document.getElementById('sunsetTxt').innerHTML = "Sunset"; // Sunset text field
@@ -203,7 +202,9 @@ Below code partially from
 
         document.getElementById('sunrise').innerHTML = standardDay.toLocaleTimeString('default') + '<img src=icons/01d.png>';
         document.getElementById('sunset').innerHTML = standardNight.toLocaleTimeString('default') + '<img src=icons/01n.png>';
-        // Above code inspir by: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=convert-unix-timestamp-to-javascript-time
+        // Above code inspired by: https://www.tutorialrepublic.com/codelab.php?topic=faq&file=convert-unix-timestamp-to-javascript-time
+
+        document.getElementById('vision').innerHTML = "Visibility: " + Data['visibility']/1000 + " km" // Visibility (km)
     }
     catch (err) {
         document.getElementById('htmlErr').innerHTML = "Not a defined city, try again."
@@ -218,10 +219,12 @@ Below code partially from
         const jsonData = await response.json();
         multiData = jsonData;
         console.log(multiData);
+
         var names = document.getElementsByClassName('multiLocation');
         for (var a = 0; a < names.length; a++) {
             names[a].innerHTML = multiData['city']['name'];
         }
+        
         var dates = document.getElementsByClassName('date');
         for (var b = 0; b < dates.length; b++) {
             dates[b].innerHTML = multiData['list'][b]['dt_txt'];
@@ -248,9 +251,9 @@ Below code partially from
             descriptions[f].innerHTML = multiData['list'][f]['weather'][0]['main']
         }
     }
-    catch (err) {
+     catch (err) {
         document.getElementById('htmlErr').innerHTML = "Not a defined city, try again."
-    }
+        }
     }
 
 

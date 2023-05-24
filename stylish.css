@@ -61,6 +61,14 @@ table, td {
   left: 25%;
 }
 
+#vision {
+  font-size: xx-large;
+  font-weight: 50;
+  position: relative;
+  width: 50%;
+  left: 25%;
+}
+
 
 #condition-icon {
   position: relative;
