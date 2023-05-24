@@ -25,8 +25,37 @@
         <li><a href="credits.html">Credits</a></li>
         <li><a href="behind_the_scene.html">Behind The Scenes...</a></li>
       </ul>
-      <img src="icons/0dn.png">
+      <img src="icons/0dn.png" width="32" height="32">
       <!--- Above code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar--->
+
+      <p> Here's some of the JavaScript in my code:</p>
+        <img src="code_explained/code_err.png" width="512" height="512">
+
+    <p>This segment of code is the probably the most important/complex portion of the JavaScript that <strong><em>I WROTE</em></strong>. Many parts of the code, such as the utilization of <code>for</code> loops, the unicode symbol for <code>˚</code>, and the use of template literals (<code>${}</code>) have been learned from other places, but I have utilized these techniques and concepts in my own way, and I hereby certify that I have written all this code on my own. Once again <a href="#footnote-1">[1]</a>, you just gotta trust me, <a href="https://www.youtube.com/watch?v=rp8hvyjZWHs&ab_channel=TheVilkaz">I am an engineer!</a></p> 
+
+    <p>I will now briefly explain this code segment. Afterwards, I suggest you simply check out the website and see what it has to offer! I accept any type of constructive criticism!</p>
+
+    <hr>
+
+    <p>
+        1. Firstly we initialize a global varibale called <code>multiData</code>, which is what we will use to call elements from the JSON object we are fetching (more on that later)
+        <br>2. We initialize an async function that will run seperately from the program flow called <code>logMultiJSONData</code> with the paramter URL, which will be the API we want to fetch data from, which in this case is OpenWeatherAPI, and in that function we put a <code>try</code>statement that will attempt to run all the code to fetch and display specific elements from the OpenWeatherAPI JSON object.
+        <br>3. Now, we create two constants, <code>const response = await fetch(url);</code>, which will await for a fetch request from the URL of our choosing, and <code>const <code>jsonData</code> = await response.json();</code>, which will await for the JSON object that the fetch request retruns.
+        <br>4. After creating our constants, we set the variable <code>multiData</code> we created earlier equal to the constnat <code>jsonData</code>, and we do this as the constnat <code>jsonData</code> is already awaiting for the JSON object from the fetch request, so it will not be able to also call and display elements from the JSON object simultaneously, so we set <code>multiData</code> as a placeholder for <code>jsonData</code> so that we are able to recieve the JSON object and call and display its elements at the same time.
+        <br>5. Now, we simply log the JSON object fetched through <code>multiData</code>.
+        <br>6. Next, we must display our data. In this case, we will be displaying the same type of data multiple times, as we will be displaying weather conditions in 3 hr increments over a 5 day time period, and the JSON object fetched for such has multiple arrays, and therefore we can't just use <code>document.getElementById()</code> to display data once, we must utilize <code>document.getElementsByClassName()</code> &. <code>for</code> loops.
+        <br>7. Each <code>for</code> loop follows a similar stricture: First, a variable is initialized that is assigned to elements with a specific class name in HTML, which will allow us to control what data to display in all the elements with that specific class; next, the <code>for</code> loop is initialized, where a variable is set to 0 as that will be the starting point for the arrays in the JSON object and elements with that specific class name, the variable is set so that it loops so long as its value is always less than the amount of times that class is present in an element, and the variable is increasing by one each time it loops. Finally, within the loop, the variable is iterated with the varible defined in the <code>for</code> loop, and the <code>innerHTML</code> of the variable equal to the classes is set to the data we want to display, in which the array we call is set to the variable we initialized in the <code>for</code> loop, so that the data displayed is in chronological order of the array. However, not all the for loops call one of the arrays as the simply call an element outside the <code>list</code> part of the JSON object, and in the for loop for the condition-images, another variable is initialized within the loop that is equal to the value of the icon id, and then that in turn is iterated and the <code>innerHTML</code> of that class is set to an  tag where the src is equal to the 'icons/(whatever the condition id is)'
+        <br>8. Finally, after the <code>try</code> statement housing all the code, there is a <code>catch (err)</code> statement, which will identify if any erros occur and catch them, and instead of displaying them in the console, an error message will display in a
+        with a specific id, which disappears if another fetch procedure is made that is successful, that code being in another function.
+        <br>9. However, the errors relating to a bad fetch request still display, as they are asynchronous from the code flow and will not stop even if they are caught.
+        <br>10. And that's it! That's probably my most complex piece of code that I wrote for this project in a nutshell.
+    </p>
+
+    <hr>
+
+    <p><strong><em>What are you waiting for? <a href="index.html">Check out the rad website!</a></em></strong></p>
+    <!--Code for footnote gotten from https://stackoverflow.com/questions/66964/how-do-i-create-a-link-to-a-footnote-in-html-->
+    <p id="footnote-1">[1]<a href="https://mg8mer.github.io/ammans-best-restaurants/">I've made this reference before! You gotta find it for yourslef ;) ↩</a></p>
   </div>
 </body>
 </html>
