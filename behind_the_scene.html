@@ -29,7 +29,7 @@
       <!--- Above code from: https://www.w3schools.com/css/tryit.asp?filename=trycss_dropdown_navbar--->
 
       <p> Here's some of the JavaScript in my code:</p>
-        <img src="code_explained/code_err.png" width="512" height="512">
+        <img src="code_explained/code_err.png" id="padding" width="512" height="512">
 
     <p>This segment of code is the probably the most important/complex portion of the JavaScript that <strong><em>I WROTE</em></strong>. Many parts of the code, such as the utilization of <code>for</code> loops, the unicode symbol for <code>˚</code>, and the use of template literals (<code>${}</code>) have been learned from other places, but I have utilized these techniques and concepts in my own way, and I hereby certify that I have written all this code on my own. Once again <a href="#footnote-1">[1]</a>, you just gotta trust me, <a href="https://www.youtube.com/watch?v=rp8hvyjZWHs&ab_channel=TheVilkaz">I am an engineer!</a></p> 
 
@@ -37,7 +37,7 @@
 
     <hr>
 
-    <p>
+    <p id="padding">
         1. Firstly we initialize a global varibale called <code>multiData</code>, which is what we will use to call elements from the JSON object we are fetching (more on that later)
         <br>2. We initialize an async function that will run seperately from the program flow called <code>logMultiJSONData</code> with the paramter URL, which will be the API we want to fetch data from, which in this case is OpenWeatherAPI, and in that function we put a <code>try</code>statement that will attempt to run all the code to fetch and display specific elements from the OpenWeatherAPI JSON object.
         <br>3. Now, we create two constants, <code>const response = await fetch(url);</code>, which will await for a fetch request from the URL of our choosing, and <code>const <code>jsonData</code> = await response.json();</code>, which will await for the JSON object that the fetch request retruns.
