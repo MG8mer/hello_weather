@@ -89,8 +89,6 @@ Below code partially from
         let dataIcon = Data['weather'][0]['icon'];
         let weatherIcon = document.getElementById('condition-icon');
         weatherIcon.innerHTML = `<img src=icons/${dataIcon}.png>`
-       
-        console.log(dataIcon);
 
         // Above implementation of image depending on "icon" in weathery arrary for OpenWeatherAPI JSON object from https://stackoverflow.com/questions/44177417/how-to-display-openweathermap-weather-icon.
 
@@ -177,9 +175,6 @@ Below code partially from
             element.style.color = 'white'   
         } 
 
-        console.log(element.style.backgroundImage)
-
-
         document.getElementById('htmlErr').innerHTML = ""; // Clear div with 'htmlErr' id as if this code fully runs there is no reason to dislay an error message
 
         document.getElementById("location").innerHTML = Data["name"] + ", " + Data["sys"]["country"]; // City name & Country
@@ -238,7 +233,7 @@ Below code partially from
         var weatherIcons = document.getElementsByClassName('conIcon');
         for (var d = 0; d < weatherIcons.length; d++) {
             var multiDataIcon = multiData['list'][d]['weather'][0]['icon'];
-            weatherIcons[d].innerHTML = `<img src=icons/${multiDataIcon}.png>`
+            weatherIcons[d].innerHTML = `<img src=icons/${multiDataIcon}.png width=64 height=64>`
         }
 
         var countries = document.getElementsByClassName('multiCountry');
@@ -265,7 +260,7 @@ Below code partially from
         const city = weatherQuery.value.trim();
         const multiCity = weatherQuery.value.trim();
         if (city !== "" && multiCity !== "") {
-            const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=metric";
+            const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=metric";
             logJSONData(queryURL);
             const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey + "&units=metric";
             logMultiJSONData(multiQueryURL);
