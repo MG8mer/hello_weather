@@ -260,7 +260,7 @@ Below code partially from
         const city = weatherQuery.value.trim();
         const multiCity = weatherQuery.value.trim();
         if (city !== "" && multiCity !== "") {
-            const queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=metric";
+            const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey + "&units=metric";
             logJSONData(queryURL);
             const multiQueryURL = "https://api.openweathermap.org/data/2.5/forecast?q="+ multiCity + "&appid=" + APIKey + "&units=metric";
             logMultiJSONData(multiQueryURL);
