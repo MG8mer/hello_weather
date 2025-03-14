@@ -57,7 +57,7 @@ Here it is in a code-block:
     }
 ```
 
-This segment of code is the probably the most important/complex portion of the JavaScript that ***I WROTE***. Many parts of the code, such as the utilization of `for` loops, the unicode symbol for `˚`, and the use of template literals (`${}`) have been learned from other places, but I have utilized these techniques and concepts in my *own* way, and I hereby certify that I have written all this code on my own. Once again[^1], you just gotta trust me, [I am an engineer!](https://www.youtube.com/watch?v=rp8hvyjZWHs&ab_channel=TheVilkaz)
+This segment of code is the probably the most important/complex portion of the JavaScript that ***I WROTE***. Many parts of the code, such as the utilization of `for` loops, the unicode symbol for `˚`, and the use of template literals (`${}`) have been learned from other places, but I have utilized these techniques and concepts in my *own* way, and I hereby certify that I have written all this code on my own.
 
 I will now briefly explain this code segment. Afterwards, I suggest you simply check out the website and see what it has to offer! I accept any type of constructive criticism!
 
